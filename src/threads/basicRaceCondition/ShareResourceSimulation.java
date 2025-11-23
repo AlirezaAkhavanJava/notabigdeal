@@ -3,11 +3,11 @@ package threads.basicRaceCondition;
 public class ShareResourceSimulation {
     int number = 0;
 
-    synchronized void increaseNumber() {
+    public synchronized void increaseNumber() {
         number++;
     }
 
-    Integer getValueOfNumber() {
+    public Integer getValueOfNumber() {
         return number;
     }
 }
