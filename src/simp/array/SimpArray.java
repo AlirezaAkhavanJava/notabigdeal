@@ -1,4 +1,4 @@
-package simp;
+package simp.array;
 
 public class SimpArray {
     Animal[] animals =
