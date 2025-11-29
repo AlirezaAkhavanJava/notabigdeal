@@ -2,7 +2,7 @@ import IoAndnio.CharacterStreams;
 import socketProgramming.SimpleClassOne;
 
 void main() throws IOException {
-    for (int i = 0 ; i < 100 ; i++){
-        SimpleClassOne.operate("Hello");
-    }
+    Path path = Path.of("/mnt/hdd/Idea/CoreJava/file.txt");
+//    System.out.println(Files.readAllLines(path));
+    SimpleClassOne.readWithStream(path);
 }

@@ -24,7 +24,13 @@ public class SimpleClassOne {
             fc.write(ByteBuffer.wrap(System.lineSeparator().getBytes(StandardCharsets.UTF_8)));
             fc.write(bf);
         }
+    }
 
+    public static void writeFast(Path path, String message) throws IOException {
+        Files.write(path, message.getBytes(), StandardOpenOption.WRITE);
+    }
 
+    public static void readWithStream(Path path) throws IOException {
+        Files.lines(path).forEach(System.out::println);
     }
 }
