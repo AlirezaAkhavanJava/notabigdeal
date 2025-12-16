@@ -1,6 +1,5 @@
 package Streams.Function;
 
-import java.util.Scanner;
 import java.util.function.Function;
 
 public class FunctionExample {
@@ -12,7 +11,7 @@ public class FunctionExample {
             number -> number * 2;
 
     private static final Function<Integer, Integer> powerIt =
-            number -> number * number;
+            number -> (int) Math.pow(number, 2.0D);
 
 
     private static final Function<Integer, Integer> doubleItThenAddOneFunction =
