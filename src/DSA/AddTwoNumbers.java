@@ -6,20 +6,46 @@ import java.util.List;
 // This is a Leet code task
 public class AddTwoNumbers {
 
-    private static List<Integer> linkedListOne = new LinkedList<>(List.of(2, 7, 14, 6));
-    private static List<Integer> linkedListTwo = new LinkedList<>(List.of(8, 3, 6));
+    private static final List<Integer> linkedListOne = new LinkedList<>(List.of(2, 7, 14, 6, 12, 36, 54));
+    private static final List<Integer> linkedListTwo = new LinkedList<>(List.of(8, 3, 6, 4, 12));
 
     public static void operation() {
-        List<Integer> combiningThem = new LinkedList<>();
+        List<Integer> combiningThemTemp = new LinkedList<>();
 
-        for (int i = 0; i < linkedListOne.size(); i++) {
-            if (linkedListOne.size() == linkedListTwo.size()) {
+
+        // ============Equal sized array=============
+        if (linkedListOne.size() == linkedListTwo.size()) {
+            for (int i = 0; i < linkedListOne.size(); i++) {
                 int temp = linkedListOne.get(i) + linkedListTwo.get(i);
-                combiningThem.add(temp);
+                combiningThemTemp.add(temp);
             }
         }
 
-        System.out.println(combiningThem);
+        // ============One is bigger=============
+        if (linkedListOne.size() > linkedListTwo.size()) {
+            int diff = linkedListOne.size() - linkedListTwo.size();
+            for (int i = 0; i < diff; i++) {
+                linkedListTwo.add(0);
+            }
+            for (int i = 0; i < linkedListOne.size(); i++) {
+                int temp = linkedListOne.get(i) + linkedListTwo.get(i);
+                combiningThemTemp.add(temp);
+            }
+        }
+
+        // ============Two is bigger=============
+        if (linkedListOne.size() < linkedListTwo.size()) {
+            int diff = linkedListTwo.size() - linkedListOne.size();
+            for (int i = 0; i < diff; i++) {
+                linkedListOne.add(0);
+            }
+            for (int i = 0; i < linkedListOne.size(); i++) {
+                int temp = linkedListOne.get(i) + linkedListTwo.get(i);
+                combiningThemTemp.add(temp);
+            }
+        }
+
+        System.out.println(combiningThemTemp);
     }
 
     static void main() {
