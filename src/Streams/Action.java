@@ -20,10 +20,14 @@ public class Action {
 
 
         List<Employee> after_raise = employees.stream()
-                .map(employee -> new Employee(employee.getFirstName(),
-                        employee.getLastName(),
-                        employee.getSalary() * 1.20 /* 20% raise */,
-                        employee.getProjects()))
+                .map(employee ->
+                        new Employee(
+                                employee.getFirstName(),
+                                employee.getLastName(),
+                                employee.getSalary() * 1.20 /* 20% raise */,
+                                employee.getProjects())
+
+                )
                 .toList();
 
         Stream.of(after_raise)
@@ -35,6 +39,13 @@ public class Action {
                 .distinct()
                 .collect(Collectors.joining(" , "));
         System.out.println(projects);
+
+
+        double sumOfSalaries = employees.stream()
+                .map(Employee::getSalary)
+                .reduce(0.0, Double::sum);
+        System.out.println(sumOfSalaries);
+
 
     }
 
