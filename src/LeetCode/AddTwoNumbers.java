@@ -1,4 +1,4 @@
-package DSA;
+package LeetCode;
 
 import java.util.LinkedList;
 import java.util.List;
