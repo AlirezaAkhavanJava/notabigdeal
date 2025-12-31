@@ -1,7 +1,11 @@
 package JCF;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
+@SuppressWarnings("unused")
 public class CollectionClass {
     static List<Integer> evenNumbers = new ArrayList<>();
     static List<Integer> oddNumbers = new ArrayList<>();
@@ -19,6 +23,10 @@ public class CollectionClass {
         }
         Collections.sort(evenNumbers);
         Collections.sort(oddNumbers);
+        Iterator<Integer> iterator = evenNumbers.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
         System.out.println("Even numbers : " + evenNumbers);
         System.out.println("Odd numbers : " + oddNumbers);
 
